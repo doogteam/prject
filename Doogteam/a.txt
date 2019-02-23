@@ -1,0 +1,31 @@
+
+package cspe;
+public class LCS {
+     String X,Y;
+    int LCS (int m,int n)
+    {
+        int [][]a;
+        a = new int [m+1][n+1];
+        for (int i=1;i<=m;i++)
+            a[i][0]=0;
+        for (int i=1;i<=1;i++)
+            a[0][i]=0;
+        for (int i=1;i<=m;i++)
+        for (int j=1;j<=n;j++)
+            if(Y.charAt(i-1)==X.charAt(j-1))
+                a[i][j]=1+a[i-1][j-1];
+            else
+                a[i][j]= Math.max(a[i-1][j],a[i][j-1]); 
+        return a[m][n];
+    }
+    LCS (){
+        X="ABADCA"; Y="DBAXDA";
+    }
+    int LCS(){
+        return LCS(X.length(),Y.length());
+    }
+    public static void main(String[] args) {
+        LCS m = new LCS();
+        System.out.print("do dai chuoi:"+m.LCS());
+    }
+}
