@@ -4,9 +4,9 @@ BtnShow.setBounds(40, 74, 131, 37);
 		JButton btnReset = new JButton("ch\u1EEF nh\u1EADt");
 		btnReset.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String aa= JOptionPane.showInputDialog(null,"chi?u dài");
+				String aa= JOptionPane.showInputDialog(null,"chieu dài");
 				int a=Integer.parseInt(aa);
-				String bb= JOptionPane.showInputDialog(null,"chi?u r?ng");
+				String bb= JOptionPane.showInputDialog(null,"chieu rong");
 				int b=Integer.parseInt(bb);
 				if(b>a) {
 					JOptionPane.showMessageDialog(null,"Wrong");
