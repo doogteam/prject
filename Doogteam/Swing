@@ -1,0 +1,123 @@
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import java.awt.FlowLayout;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class swing {
+
+	private JFrame frmSquareEquattion;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					swing window = new swing();
+					window.frmSquareEquattion.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public swing() {
+		Initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void Initialize() {
+		frmSquareEquattion = new JFrame();
+		frmSquareEquattion.setTitle("Diện tích");
+		frmSquareEquattion.setBounds(100, 100, 450, 300);
+		frmSquareEquattion.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmSquareEquattion.getContentPane().setLayout(null);
+		
+		JButton BtnShow = new JButton("h\u00ECnh vu\u00F4ng");
+		BtnShow.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String aa= JOptionPane.showInputDialog(null,"cạnh");
+				int a=Integer.parseInt(aa);
+				JOptionPane.showMessageDialog(null,a+"*"+a+"="+a*a);
+			}
+		});
+				
+		BtnShow.setBounds(40, 74, 131, 37);
+		frmSquareEquattion.getContentPane().add(BtnShow);
+		
+		JButton btnReset = new JButton("ch\u1EEF nh\u1EADt");
+		btnReset.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String aa= JOptionPane.showInputDialog(null,"chiều dài");
+				int a=Integer.parseInt(aa);
+				String bb= JOptionPane.showInputDialog(null,"chiều rộng");
+				int b=Integer.parseInt(bb);
+				if(b>a) {
+					JOptionPane.showMessageDialog(null,"Wrong");
+					
+				}
+				else
+				JOptionPane.showMessageDialog(null,a+"*"+b+"="+(a*b));
+				
+			}
+		});
+		btnReset.setBounds(40, 122, 131, 37);
+		frmSquareEquattion.getContentPane().add(btnReset);
+		
+		JButton btnExit = new JButton("h\u00ECnh tr\u00F2n");
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String aa= JOptionPane.showInputDialog(null,"bán kính");
+				int a=Integer.parseInt(aa);
+				JOptionPane.showMessageDialog(null,"3.14 *"+a+"^2="+(a*a*3.14));
+				
+			}
+		});
+		btnExit.setBounds(263, 74, 131, 37);
+		frmSquareEquattion.getContentPane().add(btnExit);
+		
+		JButton btnNewButton = new JButton("Exit");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
+			}
+		});
+		btnNewButton.setBounds(162, 207, 114, 44);
+		frmSquareEquattion.getContentPane().add(btnNewButton);
+		
+		JButton button = new JButton("hình bình hành");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String aa= JOptionPane.showInputDialog(null,"Cạnh đáy");
+				int a=Integer.parseInt(aa);
+				String bb= JOptionPane.showInputDialog(null,"Chiều cao");
+				int b=Integer.parseInt(bb);
+				JOptionPane.showMessageDialog(null,a+"*"+b+"="+a*b);
+			}
+		});
+		button.setBounds(263, 122, 131, 37);
+		frmSquareEquattion.getContentPane().add(button);
+	}
+
+	protected int pow(int a, int i) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+}
+
